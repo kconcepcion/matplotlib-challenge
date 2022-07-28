@@ -1,2 +1,62 @@
-# matplotlib-challenge
-Module 5 challenge
+# matplotlib-challenge Unit 5 Homework: The Power of Plots
+In this homework assignment, i applied what i've learned about Matplotlib and to a real-world situation and dataset.
+
+## Final Analysis
+
+1. The first thing I noticed was the effectiveness of the drug Capomulin. When looking at several of the charts provided, specifically the box plot, it is clear to see that Capomulin was effective in reducing tumor growth. One graph that displays this clearly is the lineplot graph. When looking at a graph for any mouse that took Capomulin you can see that as the timepoints progress the tumor sizes decrease
+
+2. The second thing I noted was that mince gender did not play a part in determining the effectivness of the drug regimen. When evaluating whether there was an increase/decrease in tumor volumn, the gender was equally represented. This is a factor that can be ruled out when finalizing conclusions. 
+
+3. The final thing I did note was that there was somewhat of a relationship between the weight of the rat v how big the tumor was when looking at the drug Capomulin. The trend was the bigger the rat, the bigger the tumor. Now, comparing this to a drug that showed to be less effective like Infubinol. This drug had no correlation between weight and tumor size. The scatter plot looked random. This is something to note when evaluating the effectiveness of a drug regimen. When looking at a weight v tumor plot, having a positve linear relationship tends to be a more effective drug.
+
+
+## Instructions
+* Prepare the data.
+* Generate summary statistics.
+* Create bar charts and pie charts.
+* Calculate quartiles, find outliers, and create a box plot.
+* Create a line plot and a scatter plot.
+* Calculate correlation and regression. 
+
+### Prepare the Data
+1. Run the provided package dependency and data imports, and then merge the `mouse_metadata` and `study_results` DataFrames into a single DataFrame.
+2. Display the number of unique mice IDs in the data, and then check for any mouse ID with duplicate time points. Display the data associated with that mouse ID, and then create a new DataFrame where this data is removed. Use this cleaned DataFrame for the remaining step.
+3. Display the updated number of unique mice IDs.
+
+### Generate Summary Statistics
+Create two summary statistics DataFrames:
+
+    * For the first table, use the `groupby` method to generate the mean, median, variance, standard deviation, and SEM of the tumor volume for each drug regimen. This should result in five unique series objects. Combine these objects into a single summary statistics DataFrames.
+
+    * For the second table, use the `agg` method to produce the same summary statistics table by using a single line of code.
+
+### Create Bar Charts and a Pie Charts
+1. Generate two bar plots. Both plots should be identical and show the total number of timepoints for all mice tested for each drug regimen throughout the course of the study.
+    * Create the first bar plot by using Pandas's `DataFrame.plot()` method.
+    * Create the second bar plot by using Matplotlib's `pyplot` methods.
+2. Generate two pie plots. Both plots should be identical and show the distribution of female or male mice in the study.
+    * Create the first pie plot by using both Pandas's `DataFrame.plot()`.
+    * Create the second pie plot by using Matplotlib's `pyplot` methods.
+
+### Calculate Quartiles, Find Outliers, and Create a Box Plot 
+1. Calculate the final tumor volume of each mouse across four of the most promising treatment regimens: Capomulin, Ramicane, Infubinol, and Ceftamin. Then, calculate the quartiles and IQR and determine if there are any potential outliers across all four treatment regimens. Follow these substeps:
+    * Create a grouped DataFrame that shows the last (greatest) time point for each mouse. Merge this grouped DataFrame with the original cleaned DataFrame.
+    * Create a list that holds the treatment names, as well as a second, empty list to hold the tumor volume data.
+    * Loop through each drug in the treatment list, locating the rows in the merged DataFrame that correspond to each treatment. Append the resulting final tumor volumes for each drug to the empty list. 
+    * Determine outliers by using the upper and lower bounds, and then print the results.
+2. Using Matplotlib, generate a box plot of the final tumor volume for all four treatment regimens. Highlight any potential outliers in the plot by changing their color and style.
+
+### Create a Line Plot and a Scatter Plot
+1. Select a mouse that was treated with Capomulin and generate a line plot of tumor volume vs. time point for that mouse.
+2. Generate a scatter plot of tumor volume versus mouse weight for the Capomulin treatment regimen.
+
+### Calculate Correlation and Regression
+1. Calculate the correlation coefficient and linear regression model between mouse weight and average tumor volume for the Capomulin treatment. 
+2. Plot the linear regression model on top of the previous scatter plot.
+
+
+
+
+
+
+
